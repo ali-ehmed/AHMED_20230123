@@ -33,5 +33,8 @@ module VideosList
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Set mini magic for active storage variant processor to transform images
+    config.active_storage.variant_processor = :mini_magick
   end
 end
