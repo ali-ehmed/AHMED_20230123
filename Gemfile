@@ -41,6 +41,8 @@ gem "image_processing", "~> 1.2"
 
 gem "shakapacker", "= 6.5"
 
+gem 'jsonapi-serializer'
+
 gem 'activestorage-validator'
 
 group :development, :test do
