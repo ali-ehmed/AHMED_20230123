@@ -1,19 +1,22 @@
 import React, { useEffect, useState} from 'react';
-import { Col, Row } from 'antd';
+import {Button, Col, Row} from 'antd';
 import { VideoType } from "../../api_types";
 import { VideoCardWrapper, VideoCard, VideoPlayer, VideoTitle, VideoCategory } from "./styled";
 import Axios from 'axios';
+import {useNavigate} from "react-router-dom";
+import {SectionHeader} from "../styled";
 
 type VideoContentVisibilityType = {
   [id: string]: boolean;
 }
 
 export const Videos: React.FC = () => {
+  const navigate = useNavigate();
   const [videos, setVideos] = useState<VideoType[]>([]);
   const [showContent, setShowContent] = useState<VideoContentVisibilityType>({});
   useEffect(() => {
     const loadVideos = async () => {
-      const videosResponse = await Axios.get('api/v1/videos')
+      const videosResponse = await Axios.get('/api/v1/videos')
       const videosData = videosResponse.data
       setVideos(videosData.data);
     }
@@ -36,7 +39,6 @@ export const Videos: React.FC = () => {
         onMouseEnter={() => toggleContent(video.id, true)}
         onMouseLeave={() => toggleContent(video.id, false)}
         style={{ position: 'relative' }}
-        key={video.id}
       >
         <VideoCard>
           <VideoPlayer
@@ -64,12 +66,15 @@ export const Videos: React.FC = () => {
 
   return (
     <>
-      <h1>Videos List</h1>
+      <SectionHeader>
+        <h1>Videos List</h1>
+        <Button type='primary' onClick={() => navigate('/videos/new')}>Upload Video</Button>
+      </SectionHeader>
       <Row justify={'space-between'}>
         {
           videos.map((videoItem) => {
             return (
-              <Col span={7}>{renderVideoCard(videoItem)}</Col>
+              <Col key={videoItem.id} span={7}>{renderVideoCard(videoItem)}</Col>
             )
           })
         }

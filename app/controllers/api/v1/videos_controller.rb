@@ -10,7 +10,7 @@ module Api
         @video = Video.create!(videos_params)
         render json: { data: VideoSerializer.new(@video).serializable_hash }
       rescue ActiveRecord::RecordInvalid => e
-        render json: { errors: { details: Array.wrap(e.record.errors.full_messages) } }, status: :bad_request
+        render json: { errors: e.record.errors.full_messages.to_sentence }, status: :bad_request
       end
 
       private

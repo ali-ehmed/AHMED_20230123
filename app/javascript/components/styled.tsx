@@ -7,3 +7,9 @@ export const Container = styled.div`
   margin-left: auto;
   max-width: 1140px;
 `;
+
+export const SectionHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
