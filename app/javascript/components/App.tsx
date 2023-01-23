@@ -1,7 +1,11 @@
 import React from 'react';
+import { Videos } from "./Videos";
+import { Container } from "./styled";
 
 export const App: React.FC = () => {
   return (
-    <h1>This is a react application</h1>
+    <Container>
+      <Videos />
+    </Container>
   )
 }

@@ -3,7 +3,7 @@ module Api
     class VideosController < BaseController
       def index
         @videos = Video.order(created_at: :desc)
-        render json: { data: VideoSerializer.new(@videos).serializable_hash }
+        render json: VideoSerializer.new(@videos).serializable_hash
       end
 
       def create
