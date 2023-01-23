@@ -2,7 +2,7 @@ module Api
   module V1
     class VideosController < BaseController
       def index
-        @videos = Video.order(created_at: :desc)
+        @videos = Video.includes(:category, clip_attachment: :blob).order(created_at: :desc)
         render json: VideoSerializer.new(@videos).serializable_hash
       end
 

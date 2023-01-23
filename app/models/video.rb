@@ -11,6 +11,8 @@ class Video < ApplicationRecord
   validates :title, presence: true, length: { in: 5..40 }
   validates :clip, presence: true, blob: { content_type: %w(video/quicktime video/mp4), size_range: 1..(200.megabytes) }
 
+  after_create_commit :sanitize_filename!
+
   def sized(size)
     clip.preview(VIDEO_CLIP_SIZES[size]).processed
   end
@@ -21,5 +23,11 @@ class Video < ApplicationRecord
     return if %w(video/quicktime video/mp4).include?(clip.content_type)
 
     errors.add(:clip, 'Must be a MP4 or a MOV file')
+  end
+
+  def sanitize_filename!
+    blob = clip.blob
+    blob.filename = blob.filename.sanitized
+    blob.save!
   end
 end
