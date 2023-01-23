@@ -3,41 +3,27 @@
 A simple web application that allows a user to watch and upload videos.
 
 ### Pre-requisites
-
-- ffmpeg tool
-  - This application capture previews from uploaded videos using ffmpeg tool.
-  - Install ffmpeg via `brew install ffmpeg` 
-  - Make sure `ffmpeg` command is executable in your shell
-- imagemagic tool
-  - Videos have previewable thumbnails in different sizes that are generated using image-magic tool.
-  - Install image magic via `brew install imagemagick`.
-- Ruby 3.0.3
-- Rails: 7.0.4.1
-- PostgreSQL 14.6
-- Makefile
-
+- Docker 20.10.16
+- Docker compose 1.29.2
 
 ### Clone Repo
 ```shell
 git clone git@github.com:ali-ehmed/ahmed_20230123.git
 ```
 
-### Setup Application
+### Run containers
 ```shell
-make application_setup
+docker compose up -d
 ```
 
-### Start Server
+### Setup Database
 ```shell
-make server
+docker-compose run backend make db_reset
 ```
 
-### Start Frontend
-```shell
-make frontend
-```
+### Visit `http://localhost:3000`
 
 ### Run tests
 ```shell
-make test
+docker-compose run backend make test
 ```
