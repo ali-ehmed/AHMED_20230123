@@ -8,7 +8,13 @@ A simple web application that allows a user to watch and upload videos.
 
 ### Clone Repo
 ```shell
-git clone git@github.com:ali-ehmed/ahmed_20230123.git
+git clone git@github.com:ali-ehmed/ahmed_20230123.git && cd ahmed_20230123
+```
+
+### Setup
+```shell
+docker-compose run frontend yarn
+docker-compose run backend make db_reset
 ```
 
 ### Run containers
@@ -16,12 +22,10 @@ git clone git@github.com:ali-ehmed/ahmed_20230123.git
 docker compose up -d
 ```
 
-### Setup Database
-```shell
-docker-compose run backend make db_reset
-```
-
 ### Visit `http://localhost:3000`
+```shell
+open http://localhost:3000
+```
 
 ### Run tests
 ```shell
