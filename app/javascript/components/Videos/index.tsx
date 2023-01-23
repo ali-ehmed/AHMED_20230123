@@ -70,15 +70,22 @@ export const Videos: React.FC = () => {
         <h1>Videos List</h1>
         <Button type='primary' onClick={() => navigate('/videos/new')}>Upload Video</Button>
       </SectionHeader>
-      <Row justify={'space-between'}>
-        {
-          videos.map((videoItem) => {
-            return (
-              <Col key={videoItem.id} span={6}>{renderVideoCard(videoItem)}</Col>
-            )
-          })
-        }
-      </Row>
+      {
+        videos.length > 0 ? (
+          <Row justify={'space-between'}>
+            {
+              videos.map((videoItem) => {
+                return (
+                  <Col key={videoItem.id} span={6}>{renderVideoCard(videoItem)}</Col>
+                )
+              })
+            }
+          </Row>
+        ) : (
+          <>Loading Videos...</>
+        )
+      }
+
     </>
   )
 }
