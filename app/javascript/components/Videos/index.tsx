@@ -1,5 +1,5 @@
 import React, { useEffect, useState} from 'react';
-import {Button, Col, Row} from 'antd';
+import { Button, Col, Row } from 'antd';
 import { VideoType } from "../../api_types";
 import { VideoCardWrapper, VideoCard, VideoPlayer, VideoTitle, VideoCategory } from "./styled";
 import Axios from 'axios';

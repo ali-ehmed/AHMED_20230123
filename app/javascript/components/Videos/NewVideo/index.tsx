@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import {Button, Form, Input, Select, notification} from "antd";
+import { Button, Form, Input, Select, notification } from "antd";
 import { SectionHeader } from "../../styled";
 import { useNavigate } from "react-router-dom";
 import Axios from 'axios';
 import { CategoryType } from "../../../api_types";
+
 export const NewVideo: React.FC = () => {
   const [categories, setCategories] = useState<CategoryType[]>([]);
   const navigate = useNavigate();
@@ -92,12 +93,9 @@ export const NewVideo: React.FC = () => {
           />
         </Form.Item>
 
-        <Form.Item
-          label="Clip"
-          name="clip"
-        >
+        <div style={{ marginBottom: '24px' }}>
           <input type="file" onChange={handleFileSelect}/>
-        </Form.Item>
+        </div>
 
         <Form.Item>
           <Button disabled={disableSubmit} type="primary" htmlType="submit">
