@@ -4,8 +4,13 @@ A simple web application that allows a user to watch and upload videos.
 
 ### Pre-requisites
 
-- FFMPEG: This application capture previews from uploaded videos using ffmpeg tool. Install ffmpeg via `brew install ffmpeg` otherwise there might be some errors in displaying video thumbnails.
-- Image Magic: Videos have previewable thumbnails in different sizes that are generated using image-magic tool. Install image magic via `brew install imagemagick`.
+- ffmpeg tool
+  - This application capture previews from uploaded videos using ffmpeg tool.
+  - Install ffmpeg via `brew install ffmpeg` 
+  - Make sure `ffmpeg` command is executable in your shell
+- imagemagic tool
+  - Videos have previewable thumbnails in different sizes that are generated using image-magic tool.
+  - Install image magic via `brew install imagemagick`.
 - Ruby 3.0.3
 - Rails: 7.0.4.1
 - PostgreSQL 14.6
