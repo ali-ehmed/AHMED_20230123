@@ -8,7 +8,7 @@ class Video < ApplicationRecord
   belongs_to :category
   has_one_attached :clip
 
-  validates_presence_of :title
+  validates :title, presence: true, length: { in: 5..40 }
   validates :clip, presence: true, blob: { content_type: %w(video/quicktime video/mp4), size_range: 1..(200.megabytes) }
 
   def sized(size)

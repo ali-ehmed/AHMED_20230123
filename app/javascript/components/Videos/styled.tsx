@@ -6,7 +6,7 @@ export const VideoCardWrapper = styled.div`
 `;
 
 export const VideoCard = styled(Card)`
-  padding-bottom: 65px;
+  padding-bottom: 50px;
   border: none;
   .ant-card-body {
     padding: 0;
@@ -14,6 +14,7 @@ export const VideoCard = styled(Card)`
 `;
 
 export const VideoPlayer = styled.video``;
+
 
 export const VideoTitle = styled.div`
   font-size: 18px;

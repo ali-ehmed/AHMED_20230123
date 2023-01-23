@@ -3,8 +3,8 @@ import { Button, Col, Row } from 'antd';
 import { VideoType } from "../../api_types";
 import { VideoCardWrapper, VideoCard, VideoPlayer, VideoTitle, VideoCategory } from "./styled";
 import Axios from 'axios';
-import {useNavigate} from "react-router-dom";
-import {SectionHeader} from "../styled";
+import { useNavigate } from "react-router-dom";
+import { SectionHeader } from "../styled";
 
 type VideoContentVisibilityType = {
   [id: string]: boolean;
@@ -42,7 +42,7 @@ export const Videos: React.FC = () => {
       >
         <VideoCard>
           <VideoPlayer
-            width={300}
+            width={256}
             controls
             poster={video.attributes.videoClipThumbnail}
           >
@@ -52,7 +52,7 @@ export const Videos: React.FC = () => {
             />
           </VideoPlayer>
           {
-            showContent[video.id] && (
+             showContent[video.id] && (
               <>
                 <VideoTitle>{video.attributes.title}</VideoTitle>
                 <VideoCategory>{video.attributes.category.name}</VideoCategory>
@@ -74,7 +74,7 @@ export const Videos: React.FC = () => {
         {
           videos.map((videoItem) => {
             return (
-              <Col key={videoItem.id} span={7}>{renderVideoCard(videoItem)}</Col>
+              <Col key={videoItem.id} span={6}>{renderVideoCard(videoItem)}</Col>
             )
           })
         }
