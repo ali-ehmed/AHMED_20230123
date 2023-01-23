@@ -20,4 +20,8 @@ RUN echo "alias l='ls -CF'" >> $HOME/.bashrc
 RUN echo "alias q='exit'" >> $HOME/.bashrc
 RUN echo "alias c='clear'" >> $HOME/.bashrc
 
+COPY package.json /app/package.json
+COPY yarn.lock    /app/yarn.lock
+RUN yarn install --ignore-engines
+
 CMD [ "/bin/bash" ]
