@@ -94,7 +94,7 @@ export const NewVideo: React.FC = () => {
         </Form.Item>
 
         <div style={{ marginBottom: '24px' }}>
-          <input type="file" onChange={handleFileSelect}/>
+          <input type="file" onChange={handleFileSelect} accept="video/mp4,video/quicktime" />
         </div>
 
         <Form.Item>
