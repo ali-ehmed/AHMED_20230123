@@ -8,13 +8,15 @@ class Video < ApplicationRecord
   belongs_to :category
   has_one_attached :clip
 
-  validates :title, presence: true, length: { in: 5..40 }
+  validates :title, presence: true, length: { in: 3..40 }
   validates :clip, presence: true, blob: { content_type: %w(video/quicktime video/mp4), size_range: 1..(200.megabytes) }
 
   after_create_commit :sanitize_filename!
 
   def sized(size)
     clip.preview(VIDEO_CLIP_SIZES[size]).processed
+  rescue StandardError
+    raise ArgumentError, 'Invalid Size'
   end
 
   private

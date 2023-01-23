@@ -14,6 +14,8 @@ class VideoSerializer
   end
 
   attribute :video_clip_thumbnail do |object|
-    object.sized(:thumbnail).url
+    if object.previewable?
+      object.sized(:thumbnail).url
+    end
   end
 end
