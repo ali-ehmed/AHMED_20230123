@@ -1,24 +1,38 @@
-# README
+# Ahmed_20230123
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple web application that allows a user to watch and upload videos.
 
-Things you may want to cover:
+### Pre-requisites
 
-* Ruby version
+- FFMPEG: This application capture previews from uploaded videos using ffmpeg tool. Install ffmpeg via `brew install ffmpeg` otherwise there might be some errors in displaying video thumbnails.
+- Image Magic: Videos have previewable thumbnails in different sizes that are generated using image-magic tool. Install image magic via `brew install imagemagick`.
+- Ruby 3.0.3
+- Rails: 7.0.4.1
+- PostgreSQL 14.6
+- Makefile
 
-* System dependencies
 
-* Configuration
+### Clone Repo
+```shell
+git clone git@github.com:ali-ehmed/ahmed_20230123.git
+```
 
-* Database creation
+### Setup Application
+```shell
+make application_setup
+```
 
-* Database initialization
+### Start Server
+```shell
+make server
+```
 
-* How to run the test suite
+### Start Frontend
+```shell
+make frontend
+```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Run tests
+```shell
+make test
+```
