@@ -16,7 +16,7 @@ A simple web application that allows a user to watch and upload videos.
 
 ### Clone Repo
 ```shell
-git clone git@github.com:ali-ehmed/ahmed_20230123.git && cd ahmed_20230123
+git clone git@github.com:ali-ehmed/AHMED_20230123.git && cd ahmed_20230123
 ```
 
 ### Run containers
