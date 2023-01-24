@@ -68,7 +68,7 @@ export const Videos: React.FC = () => {
     <>
       <SectionHeader>
         <h1>Videos List</h1>
-        <Button type='primary' onClick={() => navigate('/videos/new')}>Upload Video</Button>
+        <Button type='primary' onClick={() => navigate('/videos/new')}>Upload</Button>
       </SectionHeader>
       {
         videos.length > 0 ? (
