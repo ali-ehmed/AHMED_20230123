@@ -12,16 +12,9 @@ RUN bundle install
 
 RUN bundle binstubs --all
 
-RUN touch $HOME/.bashrc
-
-RUN echo "alias ll='ls -alF'" >> $HOME/.bashrc
-RUN echo "alias la='ls -A'" >> $HOME/.bashrc
-RUN echo "alias l='ls -CF'" >> $HOME/.bashrc
-RUN echo "alias q='exit'" >> $HOME/.bashrc
-RUN echo "alias c='clear'" >> $HOME/.bashrc
-
 COPY package.json /app/package.json
 COPY yarn.lock    /app/yarn.lock
-RUN yarn install --ignore-engines
+RUN yarn install
+
 
 CMD [ "/bin/bash" ]

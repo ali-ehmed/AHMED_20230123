@@ -20,10 +20,12 @@ services:
     build: .
     command: "./bin/webpacker-dev-server"
     volumes:
-      - '.:/app'
+      - .:/app
+      - yarn:/app/node_modules/
     ports:
       - '3035:3005'
     depends_on:
       - backend
 volumes:
   postgres_data: {}
+  yarn:
