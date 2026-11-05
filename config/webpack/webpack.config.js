@@ -15,4 +15,4 @@ if (isDevelopment && inliningCss) {
 
 webpackConfig.plugins.push(new ForkTSCheckerWebpackPlugin());
 
-module.exports = webpackConfig
+module.exports = webpackConfig;
